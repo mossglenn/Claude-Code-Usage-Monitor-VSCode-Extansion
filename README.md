@@ -39,17 +39,41 @@ Includes:
 ### Setup
 
 ```bash
-
 # Install dependencies
 npm install
 
-# Compile TypeScript
-npm run compile
+# Start watch mode
+npm run watch
 
-# Run extension
-# Press F5 in VS Code
-
+# Run extension - Press F5 in VS Code
 ```
+
+### Available Scripts
+
+- **`npm run watch`** - Watch mode with both esbuild and TypeScript type checking (use this during development)
+- **`npm run compile`** - Compile the extension once
+- **`npm run check-types`** - Type check without emitting files
+- **`npm run lint`** - Lint source files
+- **`npm run lint:fix`** - Fix linting issues automatically
+- **`npm run format`** - Format code with Prettier
+- **`npm run format:check`** - Check if code is formatted correctly
+- **`npm run package`** - Create production build (minified, no sourcemaps)
+- **`npm run package-extension`** - Package extension as `.vsix` file for distribution
+
+### Development Workflow
+
+1. **Start watch mode**: Press `Cmd+Shift+B` (Mac) or `Ctrl+Shift+B` (Windows/Linux)
+2. **Launch extension**: Press `F5` to open Extension Development Host
+3. **Make changes**: Edit files in `src/` - changes automatically rebuild
+4. **Reload extension**: Press `Cmd+R` (Mac) or `Ctrl+R` (Windows/Linux) in Extension Development Host
+
+### Tools & Configuration
+
+- **TypeScript**: Strict mode enabled for type safety
+- **esbuild**: Fast bundler that compiles extension into a single file (~10-100x faster than webpack)
+- **ESLint**: Code linting with TypeScript support
+- **Prettier**: Automatic code formatting (formats on save)
+- **vsce**: VS Code Extension packaging and publishing tool
 
 ### Type Definitions
 
